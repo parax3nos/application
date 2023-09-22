@@ -1,3 +1,4 @@
+pipeline {
 node ('ubuntu') {
 
 
@@ -25,5 +26,6 @@ node ('ubuntu') {
 		sh 'docker-compose up -d'
 	}  
 
+}
 }
 	
