@@ -15,14 +15,14 @@ def app
 	 stage('Post-to-dockerhub') {
 	  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_creds')
 	    {
-		app.pish("tagname")
+		app.push("tagname")
 	    }
 	}
 
 	 stage('Pull-image-server') {
 
-		sh 'docker-compose down'
-		sh 'docker-compose up -d'
+		sh "docker-compose down"
+		sh "docker-compose up -d"
 	}  
 
 }
